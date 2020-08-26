@@ -3,7 +3,7 @@ services:
   - docker
 
 script:
-  - docker build -t <dockeruser/dockertest .
+  - docker build -t connectgeeks/dockertest .
   - docker images connectgeeks/dockertest
 
 before_deploy:
