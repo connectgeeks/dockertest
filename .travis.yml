@@ -1,0 +1,16 @@
+sudo: required
+services:
+  - docker
+
+script:
+  - docker build -t <dockeruser/dockertest .
+  - docker images connectgeeks/dockertest
+
+before_deploy:
+  - docker login -u connectgeeks  -p Ankush@21
+
+deploy:
+  provider: script
+  script: docker push connectgeeks/dockertest
+  on:
+    branch: master
